@@ -16,6 +16,7 @@ words = ['Hello', 'Goodbye']
 
 n = random.randint(0,1)
 
+chosenWordMaster = list(words[n])
 chosenWord = list(words[n])
 lettersfound = []
 lettersGuessed = []
@@ -26,7 +27,8 @@ for letter in chosenWord:
     lettersfound.append('_')
 
 while True:
-    
+    print lettersfound
+    print chosenWordMaster
     for letter in lettersfound:
         print letter,
    
@@ -52,3 +54,9 @@ while True:
     else:
         print 'That was wrong!'
     lettersGuessed.append(letter)
+    if lettersfound == chosenWordMaster:
+        
+        print 'You win!'
+        break
+    
+print 'Weldone!'
