@@ -18,6 +18,7 @@ n = random.randint(0,1)
 
 chosenWord = list(words[n])
 lettersfound = []
+lettersGuessed = []
 print chosenWord
 
 for letter in chosenWord:
@@ -25,10 +26,18 @@ for letter in chosenWord:
     lettersfound.append('_')
 
 while True:
-    print lettersfound    
-    letter = raw_input('Please enter a letter: ')
-
     
+    for letter in lettersfound:
+        print letter,
+   
+   
+    print      
+    letter = raw_input('Please enter a letter: ')
+    while letter in lettersGuessed:
+        print 'You have already guessed that letter!'
+        letter = raw_input('Please enter a letter: ')
+        
+
     if letter in chosenWord:
         
         while True:
@@ -40,3 +49,6 @@ while True:
                 break
         print 'That was correct!'
         print chosenWord
+    else:
+        print 'That was wrong!'
+    lettersGuessed.append(letter)
