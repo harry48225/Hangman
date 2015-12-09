@@ -12,7 +12,7 @@ Created on 9 Dec 2015
 import random
 
 
-words = ['Hello', 'Goodbye']
+words = ['HELLO', 'GOODBYE']
 
 n = random.randint(0,1)
 
@@ -20,24 +20,32 @@ chosenWordMaster = list(words[n])
 chosenWord = list(words[n])
 lettersfound = []
 lettersGuessed = []
-print chosenWord
+lives = 8
+
 
 for letter in chosenWord:
     
     lettersfound.append('_')
+    
 
-while True:
-    print lettersfound
-    print chosenWordMaster
+
+while lives > 0:
+    
+    print 'Letters guessed: ',
+    for letter in lettersGuessed:
+        print letter + '',
+        
+    print  
+    print 'Lives remaining: %d ' % (lives)
     for letter in lettersfound:
         print letter,
    
    
     print      
-    letter = raw_input('Please enter a letter: ')
+    letter = raw_input('Please enter a letter: ').upper()
     while letter in lettersGuessed:
         print 'You have already guessed that letter!'
-        letter = raw_input('Please enter a letter: ')
+        letter = raw_input('Please enter a letter: ').upper()
         
 
     if letter in chosenWord:
@@ -50,13 +58,15 @@ while True:
             else:
                 break
         print 'That was correct!'
-        print chosenWord
+        
     else:
         print 'That was wrong!'
+        lives -= 1
     lettersGuessed.append(letter)
     if lettersfound == chosenWordMaster:
         
         print 'You win!'
         break
     
-print 'Weldone!'
+if lives == 0:
+    print 'Gameover'
