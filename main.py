@@ -45,8 +45,13 @@ while True: #The main loop
        
        
         print      
-        letter = raw_input('Please enter a letter: ').upper()       #
-        while letter in lettersGuessed:                             # Getting them to guess a letter and making sure that it
+        letter = raw_input('Please enter a letter: ').upper()       # Asking them to guess a letter
+        while len(letter) != 1:                                      #
+            print 'You can only enter one letter at a time!'        # Making sure that they have guessed a letter
+            letter = raw_input('Please enter a letter: ').upper()   #
+            
+        
+        while letter in lettersGuessed:                             # making sure that it
             print 'You have already guessed that letter!'           # is one that they haven't already guessed
             letter = raw_input('Please enter a letter: ').upper()   #
             
@@ -70,6 +75,7 @@ while True: #The main loop
         if lettersfound == chosenWordMaster: # If they have found the entire word
             
             print 'You win!'
+            print 'The word was ' + words[n]  # Prints the word
             break
         
     if lives == 0:  # Printing game over if they run out of lives
