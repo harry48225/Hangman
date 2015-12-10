@@ -87,5 +87,5 @@ while True: #The main loop
         print 'Error invalid response!'                         #
         again = raw_input('Would you like to play again? y/n: ')#
     
-    if again in ['NO', 'NO']:
+    if again in ['N', 'NO']:
         break                   # Breaking out of the entire loop and therefore ending the program if they do not want to play again
