@@ -45,17 +45,18 @@ while True: #The main loop
        
        
         print      
-        letter = raw_input('Please enter a letter: ').upper()       # Asking them to guess a letter
-        while len(letter) != 1:                                      #
+        letter = raw_input('Please enter a letter: ')               # Asking them to guess a letter
+        while len(letter) != 1:                                     #
             print 'You can only enter one letter at a time!'        # Making sure that they have guessed a letter
-            letter = raw_input('Please enter a letter: ').upper()   #
+            letter = raw_input('Please enter a letter: ')           #
             
         
-        while letter in lettersGuessed:                             # making sure that it
+        while letter.upper() in lettersGuessed:                     # making sure that it
             print 'You have already guessed that letter!'           # is one that they haven't already guessed
-            letter = raw_input('Please enter a letter: ').upper()   #
+            letter = raw_input('Please enter a letter: ')           #
             
-    
+        letter = letter.upper()     #Making the letter uppercase
+            
         if letter in chosenWord:        # Checking if the letter that they have guesses is in the word
             
             while True:                                 #
