@@ -33,7 +33,8 @@ while playing == 1:
 
     wLIST -= 1
     
-    
+    AsciiArt =  ['    _________', '    |         |', '    |         0', '    |        /|\\', '    |        / \\', '    |', '    |']
+    for line in AsciiArt: print line
     print
     print
     print 'Menu'
